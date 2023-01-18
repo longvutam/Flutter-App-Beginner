@@ -38,6 +38,14 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _openPopup(){
+    showDialog(
+        context: context,
+        builder: (context) {
+          return Dialog();
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +83,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     )
                   ),
                 )
-              )
+              ),
+              Container(
+                margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                child: new TextButton(onPressed: _openPopup,
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    foregroundColor: Colors.white
+                  ),
+                child: const Text('Click'))
+              ),
             ],
         ),
       ),
